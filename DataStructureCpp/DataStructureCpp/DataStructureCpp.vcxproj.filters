@@ -16,12 +16,12 @@
     <Filter Include="소스 파일\Linear">
       <UniqueIdentifier>{c80b5421-7cdc-4dbb-8586-62dc0e2f6812}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\LinkedList">
+      <UniqueIdentifier>{c48ad300-aa2e-46bc-ac85-7a1a1646e021}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CircularQueue.cpp">
-      <Filter>소스 파일\Linear</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList.cpp">
       <Filter>소스 파일\Linear</Filter>
     </ClCompile>
     <ClCompile Include="Queue.cpp">
@@ -32,6 +32,12 @@
     </ClCompile>
     <ClCompile Include="program.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>소스 파일\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="SortedLinkedList.cpp">
+      <Filter>소스 파일\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

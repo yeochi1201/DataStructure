@@ -131,6 +131,7 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="program.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="SortedLinkedList.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
