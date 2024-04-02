@@ -2,15 +2,14 @@
 
 using namespace std;
 
-template <typename T>
 class Stack {
 private:
-	T* array;
+	int* array;
 	int maxBound;
 	int pos;
 
 	void ExtendArray() {
-		T* temp = new T[maxBound * 2];
+		int* temp = new int[maxBound * 2];
 		copy(array, array + maxBound, temp);
 		delete[] array;
 		array = temp;
@@ -20,7 +19,7 @@ private:
 
 public:
 	Stack(int n = 10) {
-		array = new T[n];
+		array = new int[n];
 		maxBound = n;
 		pos = 0;
 	}
@@ -34,7 +33,7 @@ public:
 		}
 	}
 
-	void Push(T t) {
+	void Push(int t) {
 		if (pos == maxBound) {
 			ExtendArray();
 		}
@@ -42,12 +41,12 @@ public:
 		pos++;
 	}
 
-	T Pop() {
+	int Pop() {
 		if (Empty()) {
 			return NULL;
 		}
 		pos--;
-		T result = array[pos];
+		int result = array[pos];
 		array[pos] = NULL;
 		return result;
 	}

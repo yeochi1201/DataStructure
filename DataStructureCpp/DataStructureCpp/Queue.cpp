@@ -2,17 +2,16 @@
 
 using namespace std;
 
-template <typename T>
 class Queue {
 private:
-	T* array;
+	int* array;
 	int maxBound;
 	int writePos;
 	int readPos;
 	int count;
 
 	void ExtendArray() {
-		T* temp = new T[maxBound * 2];
+		int* temp = new int[maxBound * 2];
 		copy(array, array + maxBound, temp);
 		delete[] array;
 		array = temp;
@@ -36,7 +35,7 @@ private:
 	}
 public:
 	Queue(int n = 10) {
-		array = new T[n];
+		array = new int[n];
 		maxBound = n;
 		writePos = 0;
 		readPos = 0;
@@ -48,7 +47,7 @@ public:
 		else return false;
 	}
 
-	void Push(T t) {
+	void Push(int t) {
 		if (writePos == maxBound) {
 			Reposit();
 		}
@@ -57,11 +56,11 @@ public:
 		count++;
 	}
 
-	T Pop() {
+	int Pop() {
 		if (Empty()) {
 			return NULL;
 		}
-		T result = array[readPos];
+		int result = array[readPos];
 		array[readPos] = NULL;
 		readPos++;
 		count--;
@@ -77,15 +76,11 @@ public:
 		}
 	}
 
-	T Front() {
+	int Front() {
 		return array[readPos];
 	}
 
-	T Back() {
+	int Back() {
 		return array[writePos - 1];
 	}
 };
-
-int main() {
-	return 0;
-}

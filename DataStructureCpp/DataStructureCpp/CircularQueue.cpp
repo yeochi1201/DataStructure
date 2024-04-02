@@ -2,17 +2,16 @@
 
 using namespace std;
 
-template <typename T>
 class Queue {
 private:
-	T* array;
+	int* array;
 	int maxBound;
 	int writePos;
 	int readPos;
 	int count;
 
 	void ExtendArray() {
-		T* temp = new T[maxBound * 2];
+		int* temp = new int[maxBound * 2];
 		copy(array, array + maxBound, temp);
 		delete[] array;
 		array = temp;
@@ -20,9 +19,24 @@ private:
 		maxBound *= 2;
 	}
 
+	void Reposit() {
+		int i = 0;
+		while (true) {
+			if (i + readPos == maxBound || array[i + readPos] == NULL)
+				break;
+			array[i] = array[i + readPos];
+		}
+		writePos = count;
+		readPos = 0;
+
+		if (writePos == maxBound) {
+			ExtendArray();
+		}
+	}
+
 public:
 	Queue(int n = 10) {
-		array = new T[n];
+		array = new int[n];
 		maxBound = n;
 		writePos = 0;
 		readPos = 0;
@@ -34,7 +48,7 @@ public:
 		else return false;
 	}
 
-	void Push(T t) {
+	void Push(int t) {
 		if (count == maxBound) {
 			ExtendArray();
 		}
@@ -43,11 +57,11 @@ public:
 		count++;
 	}
 
-	T Pop() {
+	int Pop() {
 		if (Empty()) {
 			return NULL;
 		}
-		T result = array[readPos];
+		int result = array[readPos];
 		array[readPos] = NULL;
 		readPos = readPos + 1 % maxBound;
 		count--;
@@ -63,11 +77,11 @@ public:
 		}
 	}
 
-	T Front() {
+	int Front() {
 		return array[readPos];
 	}
 
-	T Back() {
+	int Back() {
 		return array[writePos - 1];
 	}
 };
