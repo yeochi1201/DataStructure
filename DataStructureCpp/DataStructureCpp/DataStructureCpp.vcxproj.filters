@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\LinkedList">
       <UniqueIdentifier>{c48ad300-aa2e-46bc-ac85-7a1a1646e021}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Tree">
+      <UniqueIdentifier>{0ce267a0-67f9-4193-96bf-aa06ac3d631d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CircularQueue.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="SortedLinkedList.cpp">
       <Filter>소스 파일\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>소스 파일\Tree</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
